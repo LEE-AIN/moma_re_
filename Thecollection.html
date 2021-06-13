@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>MoMA &#10072; The colloectoin</title>
+
+	<script src="js/script.js"></script>
+
+	<style>
+		@font-face {
+			src: url( "fonts/ITCFranklinGothicStd-BkCd.otf" );
+			font-family: "font1";
+		}
+
+		@font-face {
+			src: url( "fonts/ITCFranklinGothicStd-MdCd.otf" );
+			font-family: "font2";
+		}
+
+		@font-face {
+			src: url( "fonts/ITCFranklinGothicStd-DmCd.otf" );
+			font-family: "font3";
+		}
+
+		@font-face {
+			src: url( "fonts/ITCFranklinGothicStd-Demi.otf" );
+			font-family: "font4";
+		}
+
+		@font-face {
+			src: url( "fonts/ITCFranklinGothicStd-Hvy.otf" );
+			font-family: "font5";
+		}
+
+		@font-face {
+			src: url( "fonts/ITCFranklinGothicStd-Med.otf" );
+			font-family: "font6";
+		}
+	
+		@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+		* {
+			margin: 0px;
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0px;
+		}
+
+		.topnav {
+		  height: 52px;
+		  overflow: hidden;
+		  background-color: white;
+		  font-family: font1;
+		  letter-spacing: 1.5px;
+		}
+
+		#logo {
+			font-family: font4;
+			color: #1C1C1C;
+			font-size: 20px;
+			margin-left: 60px;
+			margin-right: 40px;
+			vertical-align: middle;
+			padding: 14px 20px;
+		}
+
+		.topnav a {
+		  float: left;
+		  display: block;
+		  font-size: 16px;
+		  color: #9F9F9F;
+		  text-align: center;
+		  padding: 16px 20px;
+		  text-decoration: none;
+		  vertical-align: middle;
+		}
+
+		.active {
+		  background-color: #04AA6D;
+		  color: white;
+		}
+
+		.topnav .icon {
+		  display: none;
+		}
+
+		.dropdown {
+		  float: left;
+		  overflow: hidden;
+		}
+
+		.dropdown .dropbtn {
+		  font-size: 16px;
+		  border: none;
+		  outline: none;
+		  color: #9F9F9F;
+		  padding: 9px 16px;
+		  background-color: inherit;
+		  font-family: inherit;
+		  letter-spacing: inherit;
+		  margin: 0;
+		  vertical-align: middle;
+		}
+
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  left: 0;
+		  background-color: #EC4826;
+		  width: 100%;
+		  z-index: 1;
+		}
+
+		.dropdown-content a {
+		  float: left;
+		  color: white;
+		  text-decoration: none;
+		}
+
+		#logo:hover {
+			color: white;
+		}
+
+		.topnav a:hover, .dropdown:hover .dropbtn {
+		  background-color: #EC4826;
+		  color: white;
+		}
+
+		.dropdown-content a:hover {
+		  background-color: #FBFBFB;
+		  color: black;
+		}
+
+		.dropdown:hover .dropdown-content {
+		  display: block;
+		}
+
+		@media screen and (max-width: 834px) {
+		  .topnav a:not(:first-child), .dropdown .dropbtn {
+		    display: none;
+		  }
+		  .topnav a.icon {
+		    float: right;
+		    display: block;
+		  }
+		}
+
+		@media screen and (max-width: 834px) {
+		  .topnav.responsive {position: relative;}
+		  .topnav.responsive .icon {
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		  }
+		  .topnav.responsive a {
+		    float: none;
+		    display: block;
+		    text-align: left;
+		  }
+		  .topnav.responsive .dropdown {float: none;}
+		  .topnav.responsive .dropdown-content {position: relative;}
+		  .topnav.responsive .dropdown .dropbtn {
+		    display: block;
+		    width: 100%;
+		    text-align: left;
+		  }
+
+		  #logo {
+        		margin-left: 0px;
+        		padding: 16px;
+        	}
+		}
+
+
+	      header {
+	        background-color: #FAF0E7;
+	        height: 700px;
+	        padding: 100px;
+	        position: relative;
+	        text-align: center;
+	        vertical-align: middle;
+	      }
+	      section {
+	        display: flex;
+	        justify-content: space-between;
+	        padding: 80px;
+	        background-color: #FAF0E7;
+	        height: 900px;
+	      }
+	      section div {
+/*	        background-color: #ff9800;
+	        width: 23%;
+	        height: 300px;*/
+	      }
+
+	      /* Scroll Animation (sa, 스크롤 애니메이션) */
+	      .sa {
+	        opacity: 0;
+	        transition: all .5s ease;
+	      }
+
+	      /* 아래에서 위로 페이드 인 */
+	      .sa-up {
+	        transform: translate(0, 100px);
+	      }
+	      /* 위에서 아래로 페이드 인 */
+	      .sa-down {
+	        transform: translate(0, -100px);
+	      }
+	      /* 왼쪽에서 오른쪽으로 페이드 인 */
+	      .sa-right {
+	        transform: translate(-100px, 0);
+	      }
+	      /* 오른쪽에서 왼쪽으로 페이드 인 */
+	      .sa-left {
+	        transform: translate(100px, 0);
+	      }
+	      /* 왼쪽으로 회전하면서 페이드 인 */
+	      .sa-rotateL {
+	        transform: rotate(180deg);
+	      }
+	      /* 오른쪽으로 회전하면서 페이드 인 */
+	      .sa-rotateR {
+	        transform: rotate(-180deg);
+	      }
+	      /* 작아진 상태에서 커지면서 페이드 인 */
+	      .sa-scaleUp {
+	        transform: scale(.5);
+	      }
+	      /* 커진 상태에서 작아지면서 페이드 인 */
+	      .sa-scaleDown {
+	        transform: scale(1.5);
+	      }
+
+	      .sa.show {
+	        opacity: 1;
+	        transform: none;
+	      }
+
+	      .header-text {
+	      	vertical-align: middle;
+	      	display: inline-block;
+	      }
+
+	      .header-1 {
+	      	font-family: font4;
+	      	font-size: 120px;
+	      	margin-bottom: 10px;
+	      	line-height: 120px;
+	      	color: #1C1C1C;
+	      }
+
+	      .header-2 {
+	      	font-family: font4;
+	      	font-size: 120px;
+	      	position: relative;
+	      	right: 120px; 
+	      	line-height: 120px;
+	      	color: #1C1C1C;
+	      }
+
+	      .header-3 {
+	      	font-family: font4;
+	      	font-size: 120px;
+	      	position: relative;
+	      	left: 100px;
+	      	line-height: 120px;
+	      	color: #1C1C1C;
+	      }
+
+	      i {
+			font-family: 'Pinyon Script', cursive;
+	      }
+
+	      .helper {
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+		}
+
+		.title-1 {
+			font-family: font4;
+			font-size: 40px;
+			display: inline-block;
+			position: absolute;
+			top: 260px;
+			left: 100px;
+			color: #EC4826;
+		}
+
+		.container-1 {
+			width: 100%;
+			position: relative;
+		}
+
+		.box-1 {
+			width: 340px;
+			height: 260px;
+			display: inline-block;
+			position: absolute;
+			right: 128px;
+		}
+
+		.box-img {
+			object-fit: cover;
+			border-radius: 10px;
+			height: 100%;
+		}
+
+		.text {
+			font-family: fonr1;
+			font-size: 16px;
+			color: white;
+			opacity: 0;
+			position: absolute;
+			vertical-align: middle;
+			text-align: center;
+		}
+
+		.text-1 {
+			top: 114px;
+			left: 120px;
+		}
+
+		.box-1:hover {
+			opacity: 0.8;
+		}
+
+		.box-1:hover .text-1 {
+			opacity: 1;
+		}
+
+		.box-2 {
+			width: 240px;
+			height: 300px;
+			display: inline-block;
+			position: absolute;
+			top: 130px;
+			right: 488px;
+		}
+
+		.text-2 {
+			top: 134px;
+			left: 60px;
+		}
+
+		.box-2:hover {
+			opacity: 0.5;
+		}
+
+		.box-2:hover .text-2 {
+			opacity: 1;
+		}
+
+		.box-3 {
+			width: 468px;
+			height: 460px;
+			display: inline-block;
+			position: absolute;
+			right: 0;
+			top: 280px;
+		}
+
+		.text-3 {
+			top: 214px;
+			left: 180px;
+		}
+
+		.box-3:hover {
+			opacity: 0.5;
+		}
+
+		.box-3:hover .text-3 {
+			opacity: 1;
+		}
+
+		.title-2 {
+			font-family: font4;
+			font-size: 40px;
+			display: inline-block;
+			position: absolute;
+			top: 492px;
+			right: 96px;
+			color: #EC4826;
+		}
+
+		.box-4 {
+			width: 420px;
+			height: 580px;
+			display: inline-block;
+			position: absolute;
+			left: 475px;
+			top: 48px;
+		}
+
+		.text-4 {
+			top: 274px;
+			left: 120px;
+		}
+
+		.box-4:hover {
+			opacity: 0.5;
+		}
+
+		.box-4:hover .text-4 {
+			opacity: 1;
+		}
+
+		.box-5 {
+			width: 200px;
+			height: 200px;
+			display: inline-block;
+			position: absolute;
+			right: 0px;
+			top: 200px;
+		}
+
+		.text-5 {
+			top: 84px;
+			left: 10px;
+		}
+
+		.box-5:hover {
+			opacity: 0.5;
+		}
+
+		.box-5:hover .text-5 {
+			opacity: 1;
+		}
+
+		.box-6 {
+			width: 250px;
+			height: 160px;
+			display: inline-block;
+			position: absolute;
+			left: 0px;
+			top: 120px;
+		}
+
+		.text-6 {
+			top: 64px;
+			left: 64px;
+		}
+
+		.box-6:hover {
+			opacity: 0.5;
+		}
+
+		.box-6:hover .text-6 {
+			opacity: 1;
+		}
+
+
+		.box-7 {
+			width: 360px;
+			height: 200px;
+			display: inline-block;
+			position: absolute;
+			left: 198px;
+			top: 540px;
+		}
+
+		.text-7 {
+			top: 84px;
+			left: 100px;
+		}
+
+		.box-7:hover {
+			opacity: 0.5;
+		}
+
+		.box-7:hover .text-7 {
+			opacity: 1;
+		}
+
+		.title-3 {
+			font-family: font4;
+			font-size: 40px;
+			display: inline-block;
+			position: absolute;
+			top: 360px;
+			left: 540px;
+			color: #EC4826;
+		}
+
+		.box-8 {
+			width: 420px;
+			height: 480px;
+			display: inline-block;
+			position: absolute;
+			left: 0px;
+			top: 130px;
+		}
+
+		.text-8 {
+			top: 224px;
+			left: 140px;
+		}
+
+		.box-8:hover {
+			opacity: 0.5;
+		}
+
+		.box-8:hover .text-8 {
+			opacity: 1;
+		}
+
+		.box-9 {
+			width: 240px;
+			height: 300px;
+			display: inline-block;
+			position: absolute;
+			right: 0px;
+			top: 60px;
+		}
+
+		.text-9 {
+			top: 134px;
+			left: 40px;
+		}
+
+		.box-9:hover {
+			opacity: 0.5;
+		}
+
+		.box-9:hover .text-9 {
+			opacity: 1;
+		}
+
+		.box-10 {
+			width: 340px;
+			height: 260px;
+			display: inline-block;
+			position: absolute;
+			right: 0px;
+			top: 380px;
+		}
+
+		.text-10 {
+			top: 114px;
+			left: 100px;
+		}
+
+		.box-10:hover {
+			opacity: 0.5;
+		}
+
+		.box-10:hover .text-10 {
+			opacity: 1;
+		}
+
+		@media screen and (max-width: 834px) {
+			.header-1 {
+				font-size: 60px;
+				line-height: 60px;
+			}
+			.header-2 {
+				font-size: 60px;
+				line-height: 60px;
+				right: 60px; 
+			}
+
+			.header-3 {
+				font-size: 60px;
+				line-height: 60px;
+				left: 50px;
+			}
+		}
+
+		.footer {
+			width: 100%;
+        	height: 240px;
+        	background-color: #FBFBFB;
+        }
+
+        .footer-left {
+        	display: inline-block;
+        	width: 60%;
+        	height: 240px;
+        	padding-left: 80px;
+        }
+
+        .footer-logo {
+        	font-family: font4;
+        	font-size: 32px;
+        	margin-top: 60px;
+        	color: #1C1C1C;
+        }
+
+        .footer-content {
+        	display: inline-block;
+        	font-family: font3;
+        	font-size: 20px;
+        	text-decoration: none;
+        	margin-right: 20px;
+        	margin-top: 20px;
+        	letter-spacing: 0.5px;
+        	color: #1C1C1C;
+        }
+
+        .footer-sub {
+        	font-family: font1;
+        	font-size: 16px;
+        	color: #9F9F9F;
+        	letter-spacing: 0.5px;
+        	margin-top: 24px;
+        }
+
+        .footer-right {
+        	display: inline-block;
+        	width: 40%;
+        	height: 240px;
+        	float: right;
+        }
+
+        .footer-sns {
+        	font-family: font3;
+        	color: #1C1C1C;
+        	font-size: 20px;
+        	letter-spacing: 0.5px;
+        	margin-top: 60px;
+        }
+
+        .footer-img {
+        	display: inline-block;
+        	height: 20px;
+        	margin-top: 28px;
+        	margin-right: 32px;
+        }
+
+        @media screen and (max-width: 834px) {
+			.footer-left {
+        		width: 100%;
+        		padding-left: 20px;
+        		text-align: center;
+        	}
+
+        	.footer-right {
+        		width: 100%;
+        		background-color: #FBFBFB;
+        		padding-left: 20px;
+        		height: 160px;
+        		text-align: center;
+        	}
+
+        	.footer-sns {
+        		margin-top: 20px;
+        	}
+
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="topnav" id="myTopnav">
+		<a href="index.html" id="logo">MoMA</a>
+
+		<div class="dropdown">
+			<button class="dropbtn">What's on<i class="fa fa-caret-down"></i>
+    		</button>
+    		<div class="dropdown-content">
+    			<a href="#">In the galleries</a>
+				<a href="#">Events</a>
+				<a href="#">Exhibition history</a>
+    		</div>
+		</div>
+
+		<div class="dropdown">
+			<button class="dropbtn">Arts and artists<i class="fa fa-caret-down"></i>
+    		</button>
+    		<div class="dropdown-content">
+    			<a href="Thecollection.html">The collection</a>
+				<a href="#">Artists</a>
+				<a href="#">Art terms</a>
+    		</div>
+		</div>
+
+		<a href="Magazine.html">Magazine</a>
+
+			<div class="dropdown">
+				<button class="dropbtn">Plan your visit<i class="fa fa-caret-down"></i>
+	    		</button>
+	    		<div class="dropdown-content">
+	    			<a href="Timedticket.html">Timed ticket</a>
+					<a href="#">Visitor guide</a>
+	    		</div>
+			</div>
+
+		<a href="#">Store</a>
+
+		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>	
+	</div>
+
+	<header>
+		<div class="helper"></div><div class="header-text">
+	      <div class="header-1">STEP<i>into</i></div>
+	      <div class="header-2">MoMA'S</div>
+	      <div class="header-3">WORLD</div>
+	  </div>
+    </header>
+    <main>
+      <section>
+      	<div class="container-1">
+      		<div class="title-1">Edward Hopper</div>
+	        <div class="sa sa-up box-1">
+	        	<img class="box-img" src="images/col_1.png" width="100%">
+	        	<div class="text text-1">Night Windows<br>1928</div>
+	        </div>
+	        <div class="sa sa-up box-2" data-sa-delay="200">
+	        	<img class="box-img" src="images/col_2.png" width="100%">
+	        	<div class="text text-2">Mrs. Acorn's Parlor<br>1926</div>
+	        </div>
+	        <div class="sa sa-up box-3" data-sa-delay="400">
+	        	<img class="box-img" src="images/col_3.png" width="100%">
+	        	<div class="text text-3">New York Movie<br>1939</div>
+	        </div>
+		</div>
+      </section>
+
+      <section>
+      	<div class="container-1">
+			<div class="title-2">Frida Kahlo</div>
+	        <div class="sa sa-up box-4">
+	        	<img class="box-img" src="images/col_4.png" width="100%">
+	        	<div class="text text-4">Self-Portrait with Cropped Hair<br>1940</div>
+	        </div>
+	        <div class="sa sa-up box-5" data-sa-delay="200">
+	        	<img class="box-img" src="images/col_5.png" width="100%">
+	        	<div class="text text-5">My Grandparents, My Parents, and I<br>1936</div>
+	        </div>
+	        <div class="sa sa-up box-6" data-sa-delay="400">
+	        	<img class="box-img" src="images/col_6.png" width="100%">
+	        	<div class="text text-6">Fulang-Chang and I<br>1937</div>
+	        </div>
+	        <div class="sa sa-up box-7" data-sa-delay="400">
+	        	<img class="box-img" src="images/col_7.png" width="100%">
+	        	<div class="text text-7">The Sand Mines of Tetelpa<br>1942</div>
+	        </div>
+		</div>
+      </section>
+
+      <section>
+      	<div class="container-1">
+      		<div class="title-3">Rene Magritte</div>
+	        <div class="sa sa-up box-8">
+	        	<img class="box-img" src="images/col_8.png" width="100%">
+	        	<div class="text text-8">The PortraitBrussels<br>1935</div>
+	        </div>
+	        <div class="sa sa-up box-9" data-sa-delay="200">
+	        	<img class="box-img" src="images/col_9.png" width="100%">
+	        	<div class="text text-9">The Thought Which Sees<br>1965</div>
+	        </div>
+	        <div class="sa sa-up box-10" data-sa-delay="400">
+	        	<img class="box-img" src="images/col_10.png" width="100%">
+	        	<div class="text text-10">The False Mirror Paris<br>1929</div>
+	        </div>
+		</div>
+      </section>  
+    </main>
+
+    <div class="footer">
+		<div class="footer-left">
+			<div class="footer-logo">MoMA</div>
+			<a class="footer-content" href="#">Privacy Policy</a>
+			<a class="footer-content" href="#">Terms of use</a>
+			<a class="footer-content" href="#">Reset text contrast</a>
+			<div class="footer-sub">© 2021 The Museum of Modern Art</div>
+		</div>
+
+		<div class="footer-right">
+			<div class="footer-sns">Follow Us</div>
+			<a class="footer-img" href="https://www.facebook.com/MuseumofModernArt/"><img src="images/icon_facebook.png" width="20"></a>
+			<a class="footer-img" href="https://twitter.com/museummodernart"><img src="images/icon_twitter.png" width="24"></a>
+			<a class="footer-img" href="https://www.instagram.com/themuseumofmodernart/"><img src="images/icon_instagram.png" width="20"></a>
+			<a class="footer-img" href="https://www.youtube.com/user/momavideos"><img src="images/icon_youtube.png" width="28"></a>
+		</div>
+	</div>
+
+    <script>
+      // Scroll Animation (sa, 스크롤 애니메이션)
+	    const saDefaultMargin = 300;
+		let saTriggerMargin = 0;
+		let saTriggerHeight = 0;
+		const saElementList = document.querySelectorAll('.sa');
+
+		const saFunc = function() {
+		  for (const element of saElementList) {
+		    if (!element.classList.contains('show')) {
+		      if (element.dataset.saMargin) {
+		        saTriggerMargin = parseInt(element.dataset.saMargin);
+		      } else {
+		        saTriggerMargin = saDefaultMargin;
+		      }
+
+		      if (element.dataset.saTrigger) {
+		        saTriggerHeight = document.querySelector(element.dataset.saTrigger).getBoundingClientRect().top + saTriggerMargin;
+		      } else {
+		        saTriggerHeight = element.getBoundingClientRect().top + saTriggerMargin;
+		      }
+
+		      if (window.innerHeight > saTriggerHeight) {
+		        let delay = (element.dataset.saDelay) ? element.dataset.saDelay : 0;
+		        setTimeout(function() {
+		          element.classList.add('show');
+		        }, delay);
+		      }
+		    }
+		  }
+		}
+
+		window.addEventListener('load', saFunc);
+		window.addEventListener('scroll', saFunc);
+    </script>
+
+
+
+</body>
+</html>

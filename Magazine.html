@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>MoMA &#10072; Magazine</title>
+
+	<script src="js/script.js"></script>
+
+	<style>
+		@font-face {
+			src: url( "fonts/ITCFranklinGothicStd-BkCd.otf" );
+			font-family: "font1";
+		}
+
+		@font-face {
+			src: url( "fonts/ITCFranklinGothicStd-MdCd.otf" );
+			font-family: "font2";
+		}
+
+		@font-face {
+			src: url( "fonts/ITCFranklinGothicStd-DmCd.otf" );
+			font-family: "font3";
+		}
+
+		@font-face {
+			src: url( "fonts/ITCFranklinGothicStd-Demi.otf" );
+			font-family: "font4";
+		}
+
+		@font-face {
+			src: url( "fonts/ITCFranklinGothicStd-Hvy.otf" );
+			font-family: "font5";
+		}
+
+		* {
+			margin: 0px;
+			box-sizing: border-box;
+		}
+
+		.topnav {
+		  overflow: hidden;
+		  background-color: white;
+		  font-family: font1;
+		  letter-spacing: 1.5px;
+		}
+
+		#logo {
+			font-family: font4;
+			color: #1C1C1C;
+			font-size: 20px;
+			margin-left: 60px;
+			margin-right: 40px;
+			vertical-align: middle;
+			padding: 14px 20px;
+		}
+
+		.topnav a {
+		  float: left;
+		  display: block;
+		  font-size: 16px;
+		  color: #9F9F9F;
+		  text-align: center;
+		  padding: 16px 20px;
+		  text-decoration: none;
+		  vertical-align: middle;
+		}
+
+		.active {
+		  background-color: #04AA6D;
+		  color: white;
+		}
+
+		.topnav .icon {
+		  display: none;
+		}
+
+		.dropdown {
+		  float: left;
+		  overflow: hidden;
+		}
+
+		.dropdown .dropbtn {
+		  font-size: 16px;
+		  border: none;
+		  outline: none;
+		  color: #9F9F9F;
+		  padding: 16px 16px;
+		  background-color: inherit;
+		  font-family: inherit;
+		  letter-spacing: inherit;
+		  margin: 0;
+		  vertical-align: middle;
+		}
+
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  left: 0;
+		  background-color: #EC4826;
+		  width: 100%;
+		  z-index: 1;
+		}
+
+		.dropdown-content a {
+		  float: left;
+		  color: white;
+		  text-decoration: none;
+		}
+
+		#logo:hover {
+			color: white;
+		}
+
+		.topnav a:hover, .dropdown:hover .dropbtn {
+		  background-color: #EC4826;
+		  color: white;
+		}
+
+		.dropdown-content a:hover {
+		  background-color: #FBFBFB;
+		  color: black;
+		}
+
+		.dropdown:hover .dropdown-content {
+		  display: block;
+		}
+
+		@media screen and (max-width: 834px) {
+		  .topnav a:not(:first-child), .dropdown .dropbtn {
+		    display: none;
+		  }
+		  .topnav a.icon {
+		    float: right;
+		    display: block;
+		  }
+		}
+
+		@media screen and (max-width: 834px) {
+		  .topnav.responsive {position: relative;}
+		  .topnav.responsive .icon {
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		  }
+		  .topnav.responsive a {
+		    float: none;
+		    display: block;
+		    text-align: left;
+		  }
+		  .topnav.responsive .dropdown {float: none;}
+		  .topnav.responsive .dropdown-content {position: relative;}
+		  .topnav.responsive .dropdown .dropbtn {
+		    display: block;
+		    width: 100%;
+		    text-align: left;
+		  }
+
+		  #logo {
+        		margin-left: 0px;
+        		padding: 16px;
+        	}
+		}
+
+		.mag-title {
+			font-family: font4;
+			font-size: 36px;
+			color: #1C1C1C;
+			margin-left: 80px;
+			margin-top: 60px;
+			margin-bottom: 40px;
+		}
+
+		.mag-container {
+			width: 100%;
+			padding-left: 80px;
+			padding-right: 80px;
+		}
+
+		.box1 {
+			display: inline-block;
+			width: 65%;
+			height: 710px;
+			float: left;
+			margin-bottom: 20px;
+		}
+
+		.box2 {
+			display: inline-block;
+			width: 100%;
+			height: 500px;
+			background-image: url('images/mag_1.png');
+			float: left;
+			margin-bottom: 20px;
+			background-size: cover;
+			background-position: center center;
+			border-radius: 10px;
+			padding-left: 36px;
+			padding-right: 36px;
+			padding-top: 40px;
+			box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.1);
+			display: inline-block;
+		}
+
+		.box2-logo {
+			font-family: font4;
+			font-size: 14px;
+			color: white;
+			width: 28px;
+			height: 28px;
+			background-color: #EC4826;
+			text-align: center;
+			line-height: 28px;
+			border-radius: 14px;
+			vertical-align: middle;
+			float: left;
+		}
+
+		.box2-int {
+			font-family: font2;
+			font-size: 14px;
+			color: white;
+			float: left;
+			vertical-align: middle;
+			line-height: 28px;
+			margin-left: 12px;
+			letter-spacing: 2px;
+		}
+
+		.box2-main {
+			clear: left;
+			font-family: font4;
+			font-size: 40px;
+			color: white;
+			margin-top: 240px;
+		}
+
+		.box2-sub {
+			font-family: font1;
+			font-size: 20px;
+			color: white;
+			margin-top: 12px;
+			letter-spacing: 1px;
+		}
+
+		.box3 {
+			display: inline-block;
+			width: 100%;
+			height: 190px;
+			float: left;
+		}
+
+		.box3-first {
+			width: 49%;
+			height: 190px;
+			float: left;
+			margin-right: 1%;
+			background-image: url('images/mag_6.png');
+			background-size: cover;
+			background-position: center center;
+			border-radius: 10px;
+			padding-top: 36px;
+			padding-left: 36px;
+			padding-right: 36px;
+			display: inline-block;
+		}
+
+		.first-int {
+			font-family: font3;
+			font-size: 14px;
+			letter-spacing: 2px;
+			color: white;
+
+		}
+
+		.first-sub {
+			font-family: font1;
+			font-size: 20px;
+			letter-spacing: 2px;
+			color: white;
+			margin-top: 24px;
+		}
+
+		.box3-second {
+			width: 49%;
+			height: 190px;
+			margin-left: 1%;
+			float: left;
+			background-image: url('images/mag_7.png');
+			background-size: cover;
+			background-position: center center;
+			border-radius: 10px;
+			padding-top: 36px;
+			padding-left: 36px;
+			padding-right: 36px;
+		}
+
+		.box4 {
+			display: inline-block;
+			width: 33.5%;
+			height: 710px;
+			float: left;
+			border-radius: 10px;
+			margin-left: 1.5%;
+			box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.1);
+			margin-bottom: 20px;
+		}
+
+		.box4-title {
+			width: 100%;
+			height: 60px;
+			color: white;
+			background-color: #EC4826;
+			font-size: 20px;
+			font-family: font4;
+			text-align: center;
+			line-height: 60px;
+			border-radius: 10px 10px 0 0;
+			letter-spacing: 1px;
+		}
+
+		.box4-main {
+			width: 100%;
+			height: 132px;
+			padding-left: 28px;
+			padding-right: 28px;
+			margin-top: 22px;
+			display: inline-block;
+		}
+
+		.box4-img {
+			width: 40%;
+			height: 132px;
+			border-radius: 10px;
+			float: left;
+			object-fit: cover;
+		}
+
+		.box4-text {
+			width: 60%;
+			height: 132px;
+			float: left;
+			padding-left: 20px;
+			padding-top: 24px;
+			padding-bottom: 24px;
+		}
+
+		.box4-int {
+			font-family: font3;
+			font-size: 14px;
+			letter-spacing: 2px;
+			color: #EC4826;
+		}
+
+		.box4-sub {
+			font-family: font1;
+			font-size: 20px;
+			margin-top: 12px;
+			color: #9F9F9F;
+			letter-spacing: 1px;
+		}
+
+		.box5 {
+			display: inline-block;
+			width: 32%;
+			height: 500px;
+			float: left;
+			border-radius: 10px;
+			margin-right: 1%;
+			box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.1);
+			margin-bottom: 20px;
+		}
+
+		.box5-img {
+			width: 100%;
+			height: 50%;
+			border-radius: 10px 10px 0 0;
+			object-fit: cover;
+		}
+
+		.box5-text {
+			width: 100%;
+			height: 50%;
+			padding-left: 36px;
+			padding-right: 36px;
+			padding-top: 32px;
+			padding-bottom: 32px;
+		}
+
+		.box5-int {
+			font-family: font3;
+			font-size: 14px;
+			letter-spacing: 2px;
+			color: #EC4826;
+		}
+
+		.box5-main {
+			font-family: font4;
+			font-size: 28px;
+			color: #1C1C1C;
+			margin-top: 32px;
+		}
+
+		.box5-sub {
+			font-family: font1;
+			font-size: 20px;
+			color: #9F9F9F;
+			margin-top: 28px;
+			letter-spacing: 1px;
+		}
+
+		.box6 {
+			display: inline-block;
+			width: 67%;
+			height: 500px;
+			float: left;
+			margin-bottom: 20px;
+			box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.1);
+			border-radius: 10px;
+			padding-left: 36px;
+			padding-right: 36px;
+			padding-top: 48px;
+			padding-bottom: 48px;
+			position: relative;
+		}
+
+		.box6-img {
+			width: 45%;
+			height: 100%;
+			border-radius: 10px;
+			float: left;
+			object-fit: cover;
+		}
+
+		.box6-text {
+			width: 55%;
+			height: 100%;
+			float: left;
+			padding-left: 36px;
+		}
+
+		.box6-int {
+			font-family: font3;
+			font-size: 14px;
+			letter-spacing: 2px;
+			color: white;
+			background-color: #EC4826;
+			width: 100px;
+			height: 36px;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 36px;
+			float: right;
+			border-radius: 18px;
+			margin-bottom: 20px;
+		}
+
+		.box6-main {
+			font-family: font4;
+			font-size: 32px;
+			color: #1C1C1C;
+			clear: right;
+		}
+
+		.box6-sub {
+			font-family: font1;
+			font-size: 20px;
+			color: #9F9F9F;
+			margin-top: 28px;
+			letter-spacing: 1px;
+		}
+
+		.box6-subimg {
+			margin-top: 32px;
+			position: absolute;
+			bottom: 48px;
+		}
+
+		.subimg {
+			width: 28%;
+			height: 120px;
+			float: left;
+			border-radius: 10px;
+			object-fit: cover;
+		}
+
+		.subimg:not(:last-child) {
+			margin-right: 2%;
+		}
+
+		a {
+			text-decoration: none;
+			display: inline-block;
+		}
+
+		.mag-more {
+			display: inline-block;
+			width: 100%;
+			font-family: font1;
+			font-size: 20px;
+			color: #9F9F9F;
+			text-align: center;
+			margin-top: 80px;
+			margin-bottom: 80px;
+		}
+
+		.footer {
+			width: 100%;
+        	height: 240px;
+        	background-color: #FBFBFB;
+        }
+
+        .footer-left {
+        	display: inline-block;
+        	width: 60%;
+        	height: 240px;
+        	padding-left: 80px;
+        }
+
+        .footer-logo {
+        	font-family: font4;
+        	font-size: 32px;
+        	margin-top: 60px;
+        	color: #1C1C1C;
+        }
+
+        .footer-content {
+        	display: inline-block;
+        	font-family: font3;
+        	font-size: 20px;
+        	text-decoration: none;
+        	margin-right: 20px;
+        	margin-top: 20px;
+        	letter-spacing: 0.5px;
+        	color: #1C1C1C;
+        }
+
+        .footer-sub {
+        	font-family: font1;
+        	font-size: 16px;
+        	color: #9F9F9F;
+        	letter-spacing: 0.5px;
+        	margin-top: 24px;
+        }
+
+        .footer-right {
+        	display: inline-block;
+        	width: 40%;
+        	height: 240px;
+        	float: right;
+        }
+
+        .footer-sns {
+        	font-family: font3;
+        	color: #1C1C1C;
+        	font-size: 20px;
+        	letter-spacing: 0.5px;
+        	margin-top: 60px;
+        }
+
+        .footer-img {
+        	display: inline-block;
+        	height: 20px;
+        	margin-top: 28px;
+        	margin-right: 32px;
+        }
+
+		@media screen and (max-width: 834px) {
+
+			.mag-title {
+				margin-left: 32px;
+			}
+
+			.mag-container {
+				padding-right: 32px;
+				padding-left: 32px;
+			}
+
+			.box1 {
+			 	width: 100%;
+			}
+
+			.box2-main {
+			 	font-size: 32px;
+			}
+
+			.box2-sub {
+			 	font-size: 16px;
+			}
+
+			.box4 {
+				width: 100%;
+				margin-left: 0;
+				margin-top: 20px;
+			}
+
+			.box4-img {
+				width: 30%;
+			}
+
+			.box4-text {
+				width: 70%;
+				padding-left: 40px;
+				margin-top: 24px;
+			}
+
+			.box5 {
+				width: 100%;
+				height: 600px;
+			}
+
+			.box5-img {
+				height: 60%;
+			}
+
+			.box5-text {
+				height: 40%;
+			}
+
+			.box6 {
+				width: 100%;
+			}
+
+			.box6-sub {
+				font-size: 16px;
+			}
+
+			.footer-left {
+        		width: 100%;
+        		padding-left: 20px;
+        		text-align: center;
+        	}
+
+        	.footer-right {
+        		width: 100%;
+        		background-color: #FBFBFB;
+        		padding-left: 20px;
+        		height: 160px;
+        		text-align: center;
+        	}
+
+        	.footer-sns {
+        		margin-top: 20px;
+        	}
+
+		}
+
+		.box2:hover {
+			opacity: 0.5;
+		}
+
+		.box3-first:hover {
+			opacity: 0.5;
+		}
+
+		.box3-second:hover {
+			opacity: 0.5;
+		}
+
+		.box4-img:hover {
+			opacity: 0.5;
+		}
+
+		.box5-img:hover {
+			opacity: 0.5;
+		}
+
+		.box6-img:hover {
+			opacity: 0.5;
+		}
+
+		.subimg:hover {
+			opacity: 0.5;
+		}
+
+
+		@media screen and (max-width: 1200px) {
+			.box4-sub {
+				font-size: 16px;
+			}
+
+			.first-sub{
+				font-size: 16px;
+			}
+
+			.box5-sub {
+				font-size: 16px;
+			}
+		}
+
+
+	</style>
+
+</head>
+<body>
+	<div class="topnav" id="myTopnav">
+		<a href="index.html" id="logo">MoMA</a>
+
+		<div class="dropdown">
+			<button class="dropbtn">What's on<i class="fa fa-caret-down"></i>
+    		</button>
+    		<div class="dropdown-content">
+    			<a href="#">In the galleries</a>
+				<a href="#">Events</a>
+				<a href="#">Exhibition history</a>
+    		</div>
+		</div>
+
+		<div class="dropdown">
+			<button class="dropbtn">Arts and artists<i class="fa fa-caret-down"></i>
+    		</button>
+    		<div class="dropdown-content">
+    			<a href="Thecollection.html">The collection</a>
+				<a href="#">Artists</a>
+				<a href="#">Art terms</a>
+    		</div>
+		</div>
+
+		<a href="Magazine.html">Magazine</a>
+
+		<div class="dropdown">
+			<button class="dropbtn">Plan your visit<i class="fa fa-caret-down"></i>
+    		</button>
+    		<div class="dropdown-content">
+    			<a href="Timedticket.html">Timed ticket</a>
+				<a href="#">Visitor guide</a>
+    		</div>
+		</div>
+
+		<a href="#">Store</a>
+		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>	
+	</div>
+
+	<div class="mag-title">Magazine</div>
+
+	<div class="mag-container">
+		<div class="box1">
+			<a href="#" class="box2">
+				<div class="box2-logo">M</div>
+				<div class="box2-int">Reconstructions</div>
+				<div class="box2-main">Fuera de la red: una conversación<br>con Eugenio Espinoza</div>
+				<div class="box2-sub">En búsqueda de una verdadera abstracción, el artista<br>venezolano batalla con la supuesta rigidez de la retícula.</div>
+			</a>
+			<div class="box3">
+				<a href="#" class="box3-first">
+					<div class="first-int">&#10073; ArtSpeaks</div>
+					<div class="first-sub">Explore Vincent van Gogh’s beloved painting in astonishing detail in this behind-the-scenes.
+					</div>
+				</a>
+				<a href="#" class="box3-second">
+					<div class="first-int">&#10073; ArtSpeaks</div>
+					<div class="first-sub">MoMA curators reconsider five worksin Barrada’s Artist’s Choice exhibition.
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="box4">
+			<div class="box4-title">What's hot</div>
+			<a href="#" class="box4-main">
+				<img class="box4-img" src="images/mag_2.png" width="100%">
+				<div class="box4-text">
+					<div class="box4-int">&#10073; Reconstuction</div>
+					<div class="box4-sub">There are black people in the future.</div>
+				</div>
+			</a>
+
+			<a href="#" class="box4-main">
+				<img class="box4-img" src="images/mag_3.png" width="100%">
+				<div class="box4-text">
+					<div class="box4-int">&#10073; Resources</div>
+					<div class="box4-sub">Support the People and Culture of Beirut</div>
+				</div>
+			</a>
+
+			<a href="#" class="box4-main">
+				<img class="box4-img" src="images/mag_4.png" width="100%">
+				<div class="box4-text">
+					<div class="box4-int">&#10073; In Detail</div>
+					<div class="box4-sub">A Close Look at Henri Matisse’s Bather</div>
+				</div>
+			</a>
+
+			<a href="#" class="box4-main">
+				<img class="box4-img" src="images/mag_5.png" width="100%">
+				<div class="box4-text">
+					<div class="box4-int">&#10073; Materials</div>
+					<div class="box4-sub">Conserving Andy Warhol’s Gold Marilyn</div>
+				</div>
+			</a>
+		</div>
+
+		<a href="#" class="box5">
+			<img class="box5-img" src="images/mag_8.png" width="100%">
+			<div class="box5-text">
+				<div class="box5-int">&#10073; Reconstuction</div>
+				<div class="box5-main">Excentricidad:</div>
+				<div class="box5-sub">El artista argentino habla sobre las implicaciones estéticasy políticas de “vaciar la superficie frontal” de un.</div>
+			</div>
+		</a>
+
+		<a href="#" class="box6">
+			<img class="box6-img" src="images/mag_9.png" width="100%">
+			<div class="box6-text">
+				<div class="box6-int">Resources</div>
+				<div class="box6-main">Drawing,<br>from a Starting</div>
+				<div class="box6-sub">The curator of Degree Zero traces a revolutionary concept that inspired postwar artists.
+				</div>
+				<div class="box6-subimg">
+					<img class="subimg" src="images/mag_10.png" width="100%">
+					<img class="subimg" src="images/mag_11.png" width="100%">
+					<img class="subimg" src="images/mag_12.png" width="100%">
+				</div>
+			</div>
+		</a>		
+	</div>
+
+	<a href="#" class="mag-more">+ Show more articles</a>
+
+	<div class="footer">
+		<div class="footer-left">
+			<div class="footer-logo">MoMA</div>
+			<a class="footer-content" href="#">Privacy Policy</a>
+			<a class="footer-content" href="#">Terms of use</a>
+			<a class="footer-content" href="#">Reset text contrast</a>
+			<div class="footer-sub">© 2021 The Museum of Modern Art</div>
+		</div>
+
+		<div class="footer-right">
+			<div class="footer-sns">Follow Us</div>
+			<a class="footer-img" href="https://www.facebook.com/MuseumofModernArt/"><img src="images/icon_facebook.png" width="20"></a>
+			<a class="footer-img" href="https://twitter.com/museummodernart"><img src="images/icon_twitter.png" width="24"></a>
+			<a class="footer-img" href="https://www.instagram.com/themuseumofmodernart/"><img src="images/icon_instagram.png" width="20"></a>
+			<a class="footer-img" href="https://www.youtube.com/user/momavideos"><img src="images/icon_youtube.png" width="28"></a>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
